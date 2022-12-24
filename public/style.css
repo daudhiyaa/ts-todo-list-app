@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@200;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.2s;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: whitesmoke;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 20px;
+}
+.container #new-task-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #4344c9;
+  border-radius: 20px;
+  padding: 20px;
+}
+.container #new-task-form #new-task-title {
+  border: none;
+  border-radius: 10px 10px;
+  padding: 10px 10px;
+  width: 100%;
+}
+.container #new-task-form #new-task-title:focus::-moz-placeholder {
+  opacity: 0;
+}
+.container #new-task-form #new-task-title:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.container #new-task-form #new-task-title:focus::placeholder {
+  opacity: 0;
+}
+.container #new-task-form #add-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px 5px;
+  padding: 5px 15px;
+  background: #fff;
+  color: #4344c9;
+}
+.container #list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 20px;
+  list-style: none;
+  gap: 10px;
+}
+.container #list li {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: 0;
+  border: normal;
+  border-radius: 15px 15px;
+  padding: 8px 10px;
+  color: #7e7e7e;
+}
+.container #list li label {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+.container #list li label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.container #list li label input:checked ~ span {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #4344c9;
+}
+.container #list li label input:checked ~ span::after {
+  display: block;
+}
+.container #list li label span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 50% 50%;
+  padding: 10px 10px;
+  border-color: #4344c9;
+  cursor: pointer;
+}
+.container #list li label span::after {
+  content: "";
+  position: absolute;
+  display: none;
+  width: 3.5px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin-bottom: 3px;
+}
+.container #list li:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #4344c9;
+  color: #fff;
+}
+.container #list li:hover span {
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+.container #list li:hover span:hover {
+  background-color: #4344c9;
+}/*# sourceMappingURL=style.css.map */

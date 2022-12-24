@@ -1,13 +1,51 @@
-# New Project
+# TODO-List App
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## How to Run
+
+1. Clone the Repo
+
+   ```git
+   git clone https://github.com/daudhiyaa/ts-todo-list-app.git
+   ```
+
+2. Install Nodejs
+
+3. Install Dependencies :
+
+   - Typescript (`-g` means globally)
+
+   ```npm
+   npm i -g typescript
+   ```
+
+   - uuid module
+
+   ```npm
+   npm i -g uuid
+   npm i --save-dev @types/uuid
+   ```
+
+4. Run the App
+
+   ```npm
+   npm start
+   ```
+
+📝 **Note**: if you don't want to install `uuid` module, remove some this things :
+
+- `id` Task, `uuid` import, and `uuidV4` function from `index.ts` in `src` folder.
+- `isolatedModules` from `tsconfig.json`
+
+_reference : [youtube](https://www.youtube.com/watch?v=jBmrduvKl5w)_
 
 ## Available Scripts
+
+> ✨ Bootstrapped with Create Snowpack App (CSA).
 
 ### npm start
 
 Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.

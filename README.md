@@ -2,6 +2,8 @@
 
 ## How to Run
 
+> Follow the steps below or click this [link](https://ts-todo-list-app.vercel.app/) if you want to see the deployed version (or if you don't want to run it by yourself)
+
 1. Clone the Repo
 
    ```git

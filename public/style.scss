@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@200;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+$main-color: #4344c9;
+$white: #fff;
+
+@mixin centerize($justify: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin setDisplay($flexDirection, $gapHeight) {
+  display: flex;
+  flex-direction: $flexDirection;
+  gap: $gapHeight;
+}
+
+@mixin setBGColorAndShadow($bgColor, $alphaShadow, $shadowWidth: 10px) {
+  box-shadow: 0 0 $shadowWidth rgba($color: #000000, $alpha: $alphaShadow);
+  background-color: $bgColor;
+}
+
+@mixin setBorderPadding($bdStyle, $bdVerc, $bdHorz, $pdVerc, $pdHorz) {
+  border: $bdStyle;
+  border-radius: $bdVerc $bdHorz;
+  padding: $pdVerc $pdHorz;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.2s;
+}
+
+body {
+  @include centerize();
+  min-height: 100vh;
+  background: whitesmoke;
+}
+
+.container {
+  @include setDisplay(column, 10px);
+  // @include setBGColorAndShadow($white, 0.5);
+  border-radius: 20px;
+
+  #new-task-form {
+    @include setDisplay(row, 10px);
+    @include setBGColorAndShadow($main-color, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+
+    #new-task-title {
+      @include setBorderPadding(none, 10px, 10px, 10px, 10px);
+      width: 100%;
+
+      &:focus::placeholder {
+        opacity: 0;
+      }
+    }
+
+    #add-btn {
+      cursor: pointer;
+      @include setBorderPadding(none, 10px, 5px, 5px, 15px);
+      background: $white;
+      color: $main-color;
+    }
+  }
+
+  #list {
+    @include setDisplay(column, 0);
+    border-radius: 20px;
+    list-style: none;
+    gap: 10px;
+
+    li {
+      @include setBGColorAndShadow($white, 0.1);
+      @include centerize(0);
+      @include setBorderPadding(normal, 15px, 15px, 8px, 10px);
+      // margin: 7px 10px;
+      color: #7e7e7e;
+
+      label {
+        @include setDisplay(row, 10px);
+        align-items: center;
+        font-size: 14px;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0;
+          width: 0;
+
+          &:checked ~ span {
+            @include setBGColorAndShadow($main-color, 0.5, 5px);
+          }
+
+          &:checked ~ span::after {
+            display: block;
+          }
+        }
+
+        span {
+          position: relative;
+          @include centerize();
+          @include setBorderPadding(2px solid, 50%, 50%, 10px, 10px);
+          border-color: $main-color;
+          cursor: pointer;
+
+          &::after {
+            content: '';
+            position: absolute;
+            display: none;
+            width: 3.5px;
+            height: 7px;
+
+            border: solid $white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            margin-bottom: 3px;
+          }
+        }
+      }
+
+      &:hover {
+        @include setBGColorAndShadow($main-color, 0.5, 5px);
+        color: $white;
+
+        span {
+          background-color: $white;
+          border: 2px solid $white;
+
+          &:hover {
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}

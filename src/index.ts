@@ -33,9 +33,11 @@ form?.addEventListener('submit', (e) => {
 function addListItem(newTask: Task) {
   const checkbox = document.createElement('input');
   const checkmark = document.createElement('span');
+  const taskTitle = document.createElement('p');
+  const label = document.createElement('label');
+  const deleteButton = document.createElement('button');
   const item = document.createElement('li');
 
-  const label = document.createElement('label');
   checkbox.addEventListener('change', (e) => {
     newTask.completed = checkbox.checked;
     saveTasks();
@@ -43,9 +45,17 @@ function addListItem(newTask: Task) {
   checkbox.type = 'checkbox';
   checkbox.checked = newTask.completed;
 
-  label.append(checkbox, checkmark, newTask.title);
-  item.append(label);
+  taskTitle.append(newTask.title);
+  label.append(checkbox, checkmark, taskTitle);
+  deleteButton.append('Delete');
+  item.append(label, deleteButton);
   list?.append(item);
+}
+
+function deleteTask(taskToDelete: Task) {
+  tasks.forEach((task, index) => {
+    if (taskToDelete.id == task.id) delete tasks[index];
+  });
 }
 
 function saveTasks() {

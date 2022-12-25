@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
   flex-direction: column;
   gap: 10px;
   border-radius: 20px;
+  max-width: 70%;
 }
 .container #new-task-form {
   display: flex;
@@ -66,11 +67,10 @@ body {
   background-color: #fff;
   display: flex;
   align-items: center;
-  justify-content: 0;
+  justify-content: space-between;
   border: normal;
   border-radius: 15px 15px;
   padding: 8px 10px;
-  color: #7e7e7e;
 }
 .container #list li label {
   display: flex;
@@ -91,6 +91,9 @@ body {
 }
 .container #list li label input:checked ~ span::after {
   display: block;
+}
+.container #list li label input:checked ~ p {
+  text-decoration: line-through;
 }
 .container #list li label span {
   position: relative;
@@ -114,15 +117,31 @@ body {
   transform: rotate(45deg);
   margin-bottom: 3px;
 }
+.container #list li label p {
+  color: #7e7e7e;
+}
 .container #list li:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   background-color: #4344c9;
-  color: #fff;
 }
-.container #list li:hover span {
+.container #list li:hover label span {
   background-color: #fff;
   border: 2px solid #fff;
 }
-.container #list li:hover span:hover {
+.container #list li:hover label span:hover {
   background-color: #4344c9;
+}
+.container #list li:hover label p {
+  color: #fff;
+}
+.container #list li:hover button {
+  color: #4344c9;
+  background-color: #fff;
+}
+.container #list li button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
 }/*# sourceMappingURL=style.css.map */

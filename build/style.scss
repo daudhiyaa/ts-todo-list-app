@@ -31,7 +31,7 @@ $white: #fff;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 
 body {
@@ -44,6 +44,7 @@ body {
   @include setDisplay(column, 10px);
   // @include setBGColorAndShadow($white, 0.5);
   border-radius: 20px;
+  max-width: 70%;
 
   #new-task-form {
     @include setDisplay(row, 10px);
@@ -76,10 +77,8 @@ body {
 
     li {
       @include setBGColorAndShadow($white, 0.1);
-      @include centerize(0);
+      @include centerize(space-between);
       @include setBorderPadding(normal, 15px, 15px, 8px, 10px);
-      // margin: 7px 10px;
-      color: #7e7e7e;
 
       label {
         @include setDisplay(row, 10px);
@@ -98,6 +97,10 @@ body {
 
           &:checked ~ span::after {
             display: block;
+          }
+
+          &:checked ~ p {
+            text-decoration: line-through;
           }
         }
 
@@ -123,20 +126,40 @@ body {
             margin-bottom: 3px;
           }
         }
+
+        p {
+          color: #7e7e7e;
+        }
       }
 
       &:hover {
         @include setBGColorAndShadow($main-color, 0.5, 5px);
-        color: $white;
 
-        span {
-          background-color: $white;
-          border: 2px solid $white;
-
-          &:hover {
-            background-color: $main-color;
+        label {
+          span {
+            background-color: $white;
+            border: 2px solid $white;
+            &:hover {
+              background-color: $main-color;
+            }
+          }
+          p {
+            color: $white;
           }
         }
+
+        button {
+          color: $main-color;
+          background-color: $white;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
       }
     }
   }

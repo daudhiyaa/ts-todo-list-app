@@ -2,7 +2,7 @@
 
 ## How to Run
 
-> Follow the steps below or click this [link](https://ts-todo-list-app.vercel.app/) if you want to see the deployed version (or if you don't want to run it by yourself)
+> Click this [link](https://ts-todo-list-app.vercel.app/) to see the deployed version
 
 1. Clone the Repo
 
@@ -32,11 +32,6 @@
    ```npm
    npm start
    ```
-
-📝 **Note**: if you don't want to install `uuid` module, remove some this things :
-
-- `id` Task, `uuid` import, and `uuidV4` function from `index.ts` in `src` folder.
-- `isolatedModules` from `tsconfig.json`
 
 _reference : [youtube](https://www.youtube.com/watch?v=jBmrduvKl5w)_
 

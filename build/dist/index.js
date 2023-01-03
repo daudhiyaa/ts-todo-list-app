@@ -31,25 +31,41 @@ function addListItem(newTask) {
     saveTasks();
   });
   checkbox.type = "checkbox";
-  checkbox.checked = newTask.completed;
-  taskTitle.append(newTask.title);
+  checkbox.checked = newTask?.completed;
+  taskTitle.append(newTask?.title);
   label.append(checkbox, checkmark, taskTitle);
+  deleteButton.classList.add("delBtn");
   deleteButton.append("Delete");
+  let id = uuidV4();
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteTask(newTask.id, id);
+  });
   item.append(label, deleteButton);
+  item.setAttribute("id", id);
   list?.append(item);
 }
-function deleteTask(taskToDelete) {
+function deleteTask(IDTaskToDelete, id) {
   tasks.forEach((task, index) => {
-    if (taskToDelete.id == task.id)
-      delete tasks[index];
+    if (IDTaskToDelete == task.id) {
+      tasks.splice(index, 1);
+      const itemToDelete = document.getElementById(id);
+      itemToDelete?.remove();
+    }
   });
+  saveTasks();
 }
+const btnDelete = document.getElementById("btnDeleteAll");
+btnDelete?.addEventListener("click", (e) => {
+  const items = loadTasks();
+  e.preventDefault();
+  items.splice(0, items.length);
+  console.log(items.length);
+});
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 function loadTasks() {
   const JSONtask = localStorage.getItem("tasks");
-  if (JSONtask == null)
-    return [];
-  return JSON.parse(JSONtask);
+  return JSONtask == null ? [] : JSON.parse(JSONtask);
 }

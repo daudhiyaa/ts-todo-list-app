@@ -5,22 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./dist/index.js" type="module"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dev.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@200;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    </style>
     <title>TODO-List App</title>
   </head>
-  <body>
-    <div class="container">
-      <form id="new-task-form">
+  <body
+    class="p-0 m-0 box-border flex items-center justify-center min-h-screen font-['Poppins'] bg-slate-100 duration-100"
+  >
+    <div
+      class="container flex flex-col items-center gap-[10px] rounded-[20px] max-w-[70%]"
+    >
+      <form
+        id="new-task-form"
+        class="flex flex-row bg-indigo-700 p-4 gap-[10px] rounded-[20px] shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+      >
         <input
           id="new-task-title"
+          class="w-full border-0 rounded-[10px] p-[10px] focus:-moz-placeholder:opacity-0 focus:-ms-input-placeholder:opacity-0 focus:placeholder:opacity-0"
           type="text"
           placeholder="Add new Task"
           onfocus="this.placeholder=''"
           onblur="this.placeholder='Add new Task'"
         />
-        <button type="submit" id="add-btn">Add</button>
+        <button
+          type="submit"
+          id="add-btn"
+          class="cursor-pointer text-indigo-700 border-0 rounded-tl-[10px] rounded-tr-[5px] rounded-br-[10px] rounded-bl-[5px] bg-[#fff] py-[5px] px-[15px]"
+        >
+          Add
+        </button>
       </form>
-      <ul id="list">
+      <ul
+        id="list"
+        class="min-w-[32%] flex flex-col gap-[10px] rounded-[20px] list-none"
+      >
         <!-- <button id="btnDeleteAll">Clear All</button> -->
       </ul>
     </div>

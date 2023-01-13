@@ -21,11 +21,17 @@ form?.addEventListener("submit", (e) => {
 });
 function addListItem(newTask) {
   const checkbox = document.createElement("input");
+  checkbox.className = "peer absolute opacity-0 h-0 w-0";
   const checkmark = document.createElement("span");
+  checkmark.className = 'group-hover:bg-white group-hover:border-solid group-hover:border-[#fff] group-hover:border-2 group-hover:hover:bg-indigo-700 relative flex items-center justify-center border-indigo-700 cursor-pointer border-2 border-solid p-[13px] rounded-[50%] after:absolute after:hidden after:w-2 after:h-4 after:mb-1 after:content-[""] after:border-solid after:border-white after:border-t-0 after:border-r-[3px] after:border-b-[3px] after:border-l-0 after:rotate-45 peer-checked:bg-indigo-700 peer-checked:shadow-[0_0_5px_rgba(0,0,0,0.5)] peer-checked:after:block';
   const taskTitle = document.createElement("p");
+  taskTitle.className = "text-gray-600 peer-checked:line-through group-hover:text-white";
   const label = document.createElement("label");
+  label.className = "flex flex-row items-center text-sm gap-[10px]";
   const deleteButton = document.createElement("button");
-  const item = document.createElement("li");
+  deleteButton.className = "bg-gray-100 cursor-pointer text-sm rounded-[10px] border-none py-[5px] px-[10px] group-hover:text-indigo-700 group-hover:bg-white";
+  const li = document.createElement("li");
+  li.className = "bg-white flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.1)] border-none rounded-[15px] py-[8px] px-[10px] group hover:bg-indigo-700 hover:shadow-[0_0_5px_rgba(0,0,0,0.5)]";
   checkbox.addEventListener("change", (e) => {
     newTask.completed = checkbox.checked;
     saveTasks();
@@ -41,9 +47,9 @@ function addListItem(newTask) {
     e.preventDefault();
     deleteTask(newTask.id, id);
   });
-  item.append(label, deleteButton);
-  item.setAttribute("id", id);
-  list?.append(item);
+  li.append(label, deleteButton);
+  li.setAttribute("id", id);
+  list?.append(li);
 }
 function deleteTask(IDTaskToDelete, id) {
   tasks.forEach((task, index) => {

@@ -4,7 +4,9 @@
     "build": "snowpack build",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
     "format": "prettier --write \"src/**/*.{ts,js}\"",
-    "lint": "prettier --check \"src/**/*.{ts,js}\""
+    "lint": "prettier --check \"src/**/*.{ts,js}\"",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/dev.css --watch",
+    "minify": "npx tailwindcss -o ./public/dev.css --minify"
   },
   "dependencies": {
     "canvas-confetti": "^1.2.0"
@@ -16,6 +18,22 @@
     "@types/uuid": "^9.0.0",
     "prettier": "^2.2.1",
     "snowpack": "^3.3.7",
+    "tailwindcss": "^3.2.4",
     "typescript": "^4.2.4"
-  }
+  },
+  "name": "ts-todo-list-app",
+  "description": "> Click this [link](https://ts-todo-list-app.vercel.app/) to see the deployed version",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daudhiyaa/ts-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daudhiyaa/ts-todo/issues"
+  },
+  "homepage": "https://github.com/daudhiyaa/ts-todo#readme"
 }

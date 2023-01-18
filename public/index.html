@@ -13,10 +13,10 @@
     <title>TODO-List App</title>
   </head>
   <body
-    class="p-0 m-0 box-border flex items-center justify-center min-h-screen font-['Poppins'] bg-slate-100 duration-100"
+    class="py-3 m-0 box-border flex flex-col items-center justify-center min-h-screen font-['Poppins'] bg-slate-100 duration-100"
   >
     <div
-      class="container flex flex-col items-center gap-[10px] rounded-[20px] max-w-[70%]"
+      class="container flex flex-col items-center gap-[10px] rounded-[20px] max-w-[70%] min-h-[90vh] py-5 justify-center"
     >
       <form
         id="new-task-form"
@@ -38,12 +38,26 @@
           Add
         </button>
       </form>
-      <ul
-        id="list"
-        class="min-w-[32%] flex flex-col gap-[10px] rounded-[20px] list-none"
-      >
+      <ul id="list" class="flex flex-col gap-[10px] rounded-[20px] list-none">
         <!-- <button id="btnDeleteAll">Clear All</button> -->
       </ul>
     </div>
+    <footer>
+      <h3 class="text-center text-sm">
+        Modified from
+        <a
+          href="https://www.youtube.com/watch?v=jBmrduvKl5w&t=6s"
+          class="text-indigo-700 hover:underline"
+          >Youtube</a
+        >
+        by
+        <a
+          href="https://github.com/daudhiyaa"
+          class="text-indigo-700 hover:underline"
+          >Daud</a
+        >
+        <br />with 💙 & Typescript
+      </h3>
+    </footer>
   </body>
 </html>

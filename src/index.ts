@@ -40,7 +40,7 @@ function addListItem(newTask: Task) {
 
   const taskTitle = document.createElement('p');
   taskTitle.className =
-    'text-gray-600 peer-checked:line-through group-hover:text-white';
+    'text-gray-600 text-justify peer-checked:line-through group-hover:text-white';
 
   const label = document.createElement('label');
   label.className = 'flex flex-row items-center text-sm gap-[10px]';
@@ -51,7 +51,7 @@ function addListItem(newTask: Task) {
 
   const li = document.createElement('li');
   li.className =
-    'bg-white flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.1)] border-none rounded-[15px] py-[8px] px-[10px] group hover:bg-indigo-700 hover:shadow-[0_0_5px_rgba(0,0,0,0.5)]';
+    'gap-[15px] bg-white flex items-center justify-between shadow-[0_0_10px_rgba(0,0,0,0.1)] border-none rounded-[15px] py-[8px] px-[10px] group hover:bg-indigo-700 hover:shadow-[0_0_5px_rgba(0,0,0,0.5)]';
 
   checkbox.addEventListener('change', (e) => {
     newTask.completed = checkbox.checked;
